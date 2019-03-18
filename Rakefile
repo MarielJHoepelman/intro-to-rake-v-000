@@ -1,3 +1,7 @@
+task :environment do
+  require_relative './config/environment'
+end
+
 desc 'outputs hello to the terminal'
 task :hello do
   puts "hello from Rake!"
@@ -25,8 +29,4 @@ namespace :db do
   task :migrate => :environment do
     Student.create_table
   end
-end
-
-task :environment do
-  require_relative './config/environment'
 end
